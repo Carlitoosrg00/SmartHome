@@ -1,0 +1,383 @@
+/* Elimina márgenes, rellenos y bordes que los navegadores añaden por defecto a los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    text-decoration: none;  
+    border: none;
+    outline: none;          
+}
+
+/* VARIABLES DE COLOR Colores. */
+:root {
+    --color-fondo: #0d0d0d;        
+    --color-barra: #151515;        
+    --color-tarjeta: #1c1c1e;      
+    --color-acento: #3b82f6;       
+    --color-texto: #ffffff;        
+    --color-texto-tenue: #8e8e93;  
+    --color-boton: #2c2c2e;        
+}
+
+/* Aplica el fondo y fuente globales. */
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Envuelve la barra lateral y el contenido. */
+.panel-contenedor {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Columna izquierda con logo, menú y usuario. */
+.barra-lateral {
+    width: 18%;
+    height: 100%;
+    background-color: var(--color-barra);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  /* Logo arriba, usuario abajo */
+    padding: 2.5% 1.5%;
+    border-right: 0.1vw solid #252525;
+}
+
+/* Logo de la aplicación */
+.logo-smarthome {
+    color: var(--color-acento);
+    font-size: 1.5vw;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.8vw;
+    margin-bottom: 20%;
+}
+
+/* Lista de enlaces de navegación */
+.menu-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh; /* Espacio vertical entre enlaces */
+}
+
+/* Estilo de cada enlace del menú */
+.menu-lateral a {
+    color: var(--color-texto-tenue);
+    font-size: 1vw;
+    padding: 6% 10%;
+    border-radius: 0.8vw;
+    transition: 0.3s;
+}
+
+/* Al pasar el cursor: fondo oscuro y texto blanco */
+.menu-lateral a:hover {
+    background: var(--color-tarjeta);
+    color: var(--color-texto);
+}
+
+/* Info del usuario */
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 8%;
+    padding-top: 15%;
+    border-top: 0.1vw solid #252525; /* Línea separadora superior */
+}
+
+/* Avatar */
+.caja-avatar {
+    width: 2.5vw;
+    height: 2.5vw;
+    background-color: #ffccbc; /* Color salmón del avatar de Carlos */
+    border-radius: 20%;
+}
+
+/* Nombre del usuario */
+.info-usuario .nombre {
+    display: block;
+    font-size: 0.9vw;
+    font-weight: bold;
+    color: var(--color-texto);
+}
+
+/* Plan del usuario */
+.info-usuario .plan {
+    font-size: 0.7vw;
+    color: var(--color-texto-tenue);
+}
+
+/* Contenido de la zona derecha */
+.contenido-principal {
+    width: 82%;
+    height: 100%;
+    padding: 3% 4%;
+    overflow-y: auto; /* Scroll vertical si el contenido no cabe */
+}
+
+/* Cabecera con el saludo y la fecha */
+.encabezado {
+    margin-bottom: 4%;
+}
+
+/* Título principal del saludo */
+.encabezado h1 {
+    font-size: 2.5vw;
+    font-weight: 600;
+    color: var(--color-texto);
+}
+
+/* Subtítulo con la fecha y el clima */
+.encabezado p {
+    font-size: 1.1vw;
+    color: var(--color-texto-tenue);
+}
+
+/* CUADRÍCULA DE TARJETAS */
+.cuadricula-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vw;
+    width: 100%;
+}
+
+/* Estilo base de cada tarjeta */
+.tarjeta {
+    background-color: var(--color-tarjeta);
+    padding: 1.2vw;
+    border-radius: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    gap: 1vw;
+    min-height: 20vw;
+    height: fit-content;         /* La tarjeta se adapta a su contenido */
+    border: 0.05vw solid rgba(128, 128, 128, 0.1);
+}
+
+.tarjeta h3 {
+    font-size: 0.75vw;
+    color: var(--color-texto-tenue);
+    letter-spacing: 0.1vw;
+    text-transform: uppercase; /* Fuerza mayúsculas aunque el HTML esté en minúsculas */
+}
+
+/* DISEÑOS INTERNOS DE LAS TARJETAS: Número grande que muestra la temperatura */
+.temperatura {
+    font-size: 4vw;
+    font-weight: bold;
+    color: var(--color-texto);
+}
+
+/* RUTINAS RÁPIDAS: Cuadrícula interna de 2 columnas para los botones */
+.cuadricula-rutinas {
+    display: grid !important; /* Evita que otras reglas lo sobreescriban */
+    grid-template-columns: 1fr 1fr;
+    gap: 1vw;
+    width: 100%;
+    margin-top: 1vw;
+}
+
+/* Cada botón de rutina */
+.boton-rutina {
+    background: var(--color-boton);
+    color: var(--color-texto);
+    border-radius: 1vw;
+    padding: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5vw;
+    font-size: 0.9vw;
+    cursor: pointer;
+    min-height: 5vw;
+    width: 100%;
+}
+
+/* Imagen de la gráfica sin deformarse */
+.imagen-grafica {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Caja de cada dispositivo */
+.dispositivo {
+    background: var(--color-boton);
+    padding: 0.7vw 1vw;
+    border-radius: 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.4vw;
+}
+
+/* Agrupa el círculo de icono y el texto del dispositivo */
+.grupo-info {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+/* Círculo de icono a la izquierda de cada dispositivo */
+.circulo-icono {
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2vw;
+}
+
+.icono-sol     { background: #3d2c1c; color: #ffcc00; }
+.icono-apagado { background: #1c1c1e; color: #444; }
+
+/* Nombre de la habitación */
+.nombre-habitacion {
+    font-size: 1vw;
+    font-weight: bold;
+    display: block;
+    color: var(--color-texto);
+}
+
+/* Estado del dispositivo */
+.texto-estado {
+    font-size: 0.8vw;
+    color: var(--color-texto-tenue);
+}
+
+/* INTERRUPTOR DESLIZANTE */
+.interruptor {
+    position: relative;
+    display: inline-block;
+    width: 3.2vw;
+    height: 1.8vw;
+    flex-shrink: 0; /* No se encoge aunque haya poco espacio */
+}
+
+/* Reemplaza checkbox por barra deslizante */
+.interruptor input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* La barra gris del interruptor */
+.deslizador {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #39393d;
+    transition: .4s;           /* Animación suave al activarse */
+    border-radius: 2vw;
+}
+
+/* La bolita blanca que se desliza dentro del switch */
+.deslizador:before {
+    position: absolute;
+    content: "";
+    height: 1.4vw;
+    width: 1.4vw;
+    left: 0.2vw;
+    bottom: 0.2vw;
+    background-color: white;
+    transition: .4s; /* Animación suave del movimiento */
+    border-radius: 50%;
+}
+
+/* Cuando el checkbox está marcado: la barra se vuelve azul */
+input:checked + .deslizador {
+    background-color: var(--color-acento);
+}
+
+/* Cuando está marcado: la bolita se desplaza a la derecha */
+input:checked + .deslizador:before {
+    transform: translateX(1.4vw);
+}
+
+/* Contenedor de cada imagen de cámara */
+.contenedor-camara {
+    width: 100%;
+    height: 44%;
+    position: relative;   
+    border-radius: 0.8vw;
+    overflow: hidden;
+    margin-bottom: 4%;
+}
+
+/* La imagen ocupa todo el contenedor recortándose si hace falta */
+.imagen-camara {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+/* Etiqueta "EN VIVO" superpuesta sobre la imagen */
+.superposicion-camara {
+    position: absolute;
+    top: 8%;
+    left: 5%;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white !important; /* Siempre blanco, en modo claro y oscuro */
+    padding: 2% 5%;
+    border-radius: 0.4vw;
+    font-size: 0.7vw;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    backdrop-filter: blur(4px); /* Desenfoque del fondo detrás de la etiqueta */
+}
+
+/* Punto rojo que simula la luz de grabación activa */
+.luz-roja {
+    width: 0.5vw;
+    height: 0.5vw;
+    background-color: #ff4d4d;
+    border-radius: 50%;
+}
+
+/* Cuadrícula de 2 columnas con datos del sistema */
+    .cuadricula-estado {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8vw;
+        width: 100%;
+        margin-top: 0.5vw;
+    }
+
+    /* Cada caja individual */
+    .caja-estado {
+        background: var(--color-boton);
+        padding: 1vw;
+        border-radius: 1vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* Texto pequeño de etiqueta */
+    .caja-estado .etiqueta {
+        font-size: 0.65vw;
+        color: var(--color-texto-tenue);
+        margin-bottom: 0.2vw;
+    }
+
+    /* Valor principal en negrita */
+    .caja-estado .valor {
+        font-size: 1vw;
+        font-weight: bold;
+        color: var(--color-texto);
+    }
+
+    

@@ -1,0 +1,41 @@
+/* Botón y tema modo claro */
+    .boton-tema {
+        display: block;
+        padding: 0.8%;
+        background: var(--color-boton);
+        border-radius: 0.5%;
+        cursor: pointer;
+        text-align: center;
+        font-size: 0.8vw;
+        margin-bottom: 2%;
+        color: var(--color-texto);
+    }
+
+    /* Fuerza todos los textos dal modo claro */
+    .tarjeta p,
+    .tarjeta span,
+    .tarjeta small,
+    .tarjeta div {
+        color: var(--color-texto);
+    }
+
+    /* El texto "Modo Claro" está oculto en modo oscuro */
+    .txt-claro { display: none; }
+
+    /* Cuando el checkbox está marcado cambian los valores a claro*/
+    #check-tema:checked ~ .panel-contenedor {
+        --color-fondo: #eef1f5;
+        --color-barra: #ffffff;
+        --color-tarjeta: #ffffff;
+        --color-texto: #1a1a1c;
+        --color-texto-tenue: #7f8c8d;
+        --color-boton: #f2f2f7;
+        background-color: #eef1f5;
+    }
+
+    body:has(#check-tema:checked) {
+        background-color: #eef1f5;
+    }
+
+    #check-tema:checked ~ .panel-contenedor .txt-oscuro { display: none; }
+    #check-tema:checked ~ .panel-contenedor .txt-claro  { display: inline; }

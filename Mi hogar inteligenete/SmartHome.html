@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartHome Panel</title>
+    <link rel="stylesheet" href="aspectooscuro.css">
+    <link rel="stylesheet" href="aspectoclaro.css">
+    <link rel="stylesheet" href="media.css">
+</head>
+<body>
+    <input type="checkbox" id="check-tema" style="display: none;">
+
+    <div class="panel-contenedor">
+        <aside class="barra-lateral">
+            <div class="barra-lateral-superior">
+                <div class="logo-smarthome">
+                    <span class="icono">🏠</span> SmartHome
+                </div>
+
+                <label for="check-tema" class="boton-tema">
+                    <span class="txt-oscuro">☀️ Modo Claro</span>
+                    <span class="txt-claro">🌙 Modo Oscuro</span>
+                </label>
+
+                <nav class="menu-lateral">
+                    <a href="#">Panel de Control</a>
+                    <a href="#">Consumo de Energía</a>
+                    <a href="#">Cámaras</a>
+                    <a href="#">Configuración</a>
+                </nav>
+            </div>
+
+            <div class="usuario">
+                <div class="caja-avatar"></div>
+                <div class="info-usuario">
+                    <span class="nombre">Carlos Doe</span>
+                    <span class="plan">Hogar Premium</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="contenido-principal">
+            <header class="encabezado">
+                <h1>¡Buenas noches, Carlos!</h1>
+                <p>Lunes, 16 de Marzo • 12°C Despejado</p>
+            </header>
+
+            <section class="cuadricula-tarjetas">
+
+                <div class="tarjeta">
+                    <h3>CLIMATIZACIÓN</h3>
+                    <div class="temperatura">22.5°C</div>
+                    <div class="pie-tarjeta">
+                        <p>Humedad: 48%</p>
+                        <p class="estado-ok">Índice AQI: 12 (Excelente)</p>
+                    </div>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>RUTINAS RÁPIDAS</h3>
+                    <div class="cuadricula-rutinas">
+                        <div class="boton-rutina"><span>🏠</span> Casa</div>
+                        <div class="boton-rutina"><span>🌙</span> Dormir</div>
+                        <div class="boton-rutina"><span>🎬</span> Cine</div>
+                        <div class="boton-rutina"><span>🚪</span> Salir</div>
+                    </div>
+                </div>
+
+                <div class="tarjeta consumo">
+                    <h3>CONSUMO DE ENERGÍA</h3>
+                    <div class="contenedor-grafica">
+                        <img src="Resources/Imagenes/grafica.png" alt="Gráfica de Consumo Semanal" class="imagen-grafica">
+                    </div>
+                    <div class="pie-grafica">
+                        <p>3.4 kWh / día</p>
+                    </div>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>ILUMINACIÓN</h3>
+                    <div class="dispositivo">
+                        <div class="grupo-info">
+                            <div class="circulo-icono icono-sol">☀️</div>
+                            <div class="texto-info">
+                                <span class="nombre-habitacion">Sala de Estar</span>
+                                <span class="texto-estado">80% Brillo</span>
+                            </div>
+                        </div>
+                        <label class="interruptor">
+                            <input type="checkbox" checked>
+                            <span class="deslizador"></span>
+                        </label>
+                    </div>
+                    <div class="dispositivo">
+                        <div class="grupo-info">
+                            <div class="circulo-icono icono-apagado">🌙</div>
+                            <div class="texto-info">
+                                <span class="nombre-habitacion">Cocina</span>
+                                <span class="texto-estado">Apagado</span>
+                            </div>
+                        </div>
+                        <label class="interruptor">
+                            <input type="checkbox">
+                            <span class="deslizador"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>CÁMARAS DE SEGURIDAD</h3>
+                    <div class="contenedor-camara">
+                        <img src="Resources/Imagenes/puerta.png" alt="Puerta Principal" class="imagen-camara">
+                        <div class="superposicion-camara">
+                            <span class="luz-roja"></span> EN VIVO: PUERTA PRINCIPAL
+                        </div>
+                    </div>
+                    <div class="contenedor-camara">
+                        <img src="Resources/Imagenes/puerta.png" alt="Patio Trasero" class="imagen-camara">
+                        <div class="superposicion-camara">
+                            <span class="luz-roja"></span> EN VIVO: PATIO TRASERO
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>ESTADO DEL SISTEMA</h3>
+                    <div class="cuadricula-estado">
+                        <div class="caja-estado">
+                            <span class="etiqueta">RED WI-FI</span>
+                            <span class="valor">Carlos_5G</span>
+                        </div>
+                        <div class="caja-estado">
+                            <span class="etiqueta">TIEMPO DE USO</span>
+                            <span class="valor">12d 4h 22m</span>
+                        </div>
+                        <div class="caja-estado">
+                            <span class="etiqueta">ALMACENAMIENTO</span>
+                            <span class="valor">42% usado</span>
+                        </div>
+                        <div class="caja-estado">
+                            <span class="etiqueta">DISPOSITIVOS</span>
+                            <span class="valor">34 Activos</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+</body>
+</html>

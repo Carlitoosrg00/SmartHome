@@ -1,0 +1,300 @@
+/* PARA TABLETS (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .barra-lateral {
+        width: 22%;
+    }
+
+    .contenido-principal {
+        width: 78%;
+    }
+
+    .logo-smarthome {
+        font-size: 2vw;
+    }
+
+    .menu-lateral a {
+        font-size: 1.4vw;
+    }
+
+    .cuadricula-tarjetas {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5vw;
+    }
+
+    .tarjeta {
+        min-height: auto;
+    }
+
+    .tarjeta h3 {
+        font-size: 1.2vw;
+    }
+
+    .temperatura {
+        font-size: 6vw;
+    }
+
+    .boton-rutina {
+        font-size: 1.4vw;
+        min-height: 8vw;
+    }
+
+    .encabezado h1 {
+        font-size: 3.5vw;
+    }
+
+    .encabezado p {
+        font-size: 1.6vw;
+    }
+
+    .nombre-habitacion {
+        font-size: 1.6vw;
+    }
+
+    .texto-estado {
+        font-size: 1.2vw;
+    }
+
+    .circulo-icono {
+        width: 4.5vw;
+        height: 4.5vw;
+        font-size: 1.8vw;
+    }
+
+    .interruptor {
+        width: 5vw;
+        height: 2.8vw;
+    }
+
+    .deslizador:before {
+        height: 2.2vw;
+        width: 2.2vw;
+        left: 0.3vw;
+        bottom: 0.3vw;
+    }
+
+    input:checked + .deslizador:before {
+        transform: translateX(2.2vw);
+    }
+
+    .caja-estado .etiqueta {
+        font-size: 1vw;
+    }
+
+    .caja-estado .valor {
+        font-size: 1.6vw;
+    }
+
+    .superposicion-camara {
+        font-size: 1.2vw;
+    }
+
+    .contenedor-camara {
+        height: 30vw;
+    }
+}
+
+
+/* PARA MÓVILES (máx 768px) */
+@media (max-width: 768px) {
+
+    html, body {
+        overflow: auto;
+    }
+
+    /* El contenedor se apila en vertical */
+    .panel-contenedor {
+        flex-direction: column;
+        height: auto;
+        min-height: 100%;
+    }
+
+    .barra-lateral {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        padding: 8px 12px 6px 12px;
+        box-sizing: border-box;
+        border-right: none;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+        gap: 6px;
+        position: relative;
+        z-index: auto;
+    }
+
+/* Vuelve al padding normal, sin espacio extra arriba */
+    .contenido-principal {
+        width: 100%;
+        height: auto;
+        padding: 16px 12px;
+        overflow-y: visible;
+    }
+
+    /* Logo + botón de tema */
+    .logo-smarthome {
+        font-size: 18px;
+        margin: 0;
+        gap: 6px;
+        display: flex;
+        align-items: center;
+    }
+
+    .boton-tema {
+        font-size: 12px;
+        padding: 5px 10px;
+        border-radius: 8px;
+        margin: 0;
+        white-space: nowrap;
+        align-self: flex-start;
+    }
+
+    /* Menú horizontal */
+    .menu-lateral {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 0;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .menu-lateral a {
+        font-size: 11px;
+        font-weight: 600;
+        padding: 5px 4px;
+        border-radius: 6px;
+        text-align: center;
+        white-space: nowrap;
+        flex: 1;
+    }
+
+    /* Usuario oculto */
+    .usuario {
+        display: none;
+    }
+
+    .contenido-principal {
+        width: 100%;
+        height: auto;
+        padding: 16px 12px;
+        overflow-y: visible;
+    }
+
+    .encabezado {
+        margin-bottom: 6%;
+    }
+
+    .encabezado h1 {
+        font-size: 7vw;
+    }
+
+    .encabezado p {
+        font-size: 3.5vw;
+    }
+
+    .cuadricula-tarjetas {
+        grid-template-columns: 1fr;
+        gap: 4vw;
+    }
+
+    .tarjeta {
+        padding: 5%;
+        border-radius: 4vw;
+        min-height: auto;
+        gap: 3vw;
+    }
+
+    .tarjeta h3 {
+        font-size: 3vw;
+        letter-spacing: 0.3vw;
+    }
+
+    .temperatura {
+        font-size: 14vw;
+    }
+
+    .cuadricula-rutinas {
+        gap: 3vw;
+        margin-top: 2vw;
+    }
+
+    .boton-rutina {
+        font-size: 3.5vw;
+        padding: 4vw;
+        border-radius: 3vw;
+        min-height: 18vw;
+        gap: 2vw;
+    }
+
+    .dispositivo {
+        padding: 3vw 4vw;
+        border-radius: 3vw;
+        margin-bottom: 2vw;
+    }
+
+    .circulo-icono {
+        width: 10vw;
+        height: 10vw;
+        font-size: 4vw;
+    }
+
+    .nombre-habitacion {
+        font-size: 4vw;
+    }
+
+    .texto-estado {
+        font-size: 3vw;
+    }
+
+    .interruptor {
+        width: 12vw;
+        height: 6.5vw;
+    }
+
+    .deslizador:before {
+        height: 5vw;
+        width: 5vw;
+        left: 0.7vw;
+        bottom: 0.7vw;
+    }
+
+    input:checked + .deslizador:before {
+        transform: translateX(5.3vw);
+    }
+
+    .contenedor-camara {
+        height: 50vw;
+        margin-bottom: 3%;
+        border-radius: 3vw;
+    }
+
+    .superposicion-camara {
+        font-size: 2.5vw;
+        gap: 1.5vw;
+        border-radius: 1.5vw;
+    }
+
+    .luz-roja {
+        width: 2vw;
+        height: 2vw;
+    }
+
+    .cuadricula-estado {
+        gap: 3vw;
+        margin-top: 2vw;
+    }
+
+    .caja-estado {
+        padding: 3vw;
+        border-radius: 3vw;
+    }
+
+    .caja-estado .etiqueta {
+        font-size: 2.5vw;
+    }
+
+    .caja-estado .valor {
+        font-size: 4vw;
+    }
+}
